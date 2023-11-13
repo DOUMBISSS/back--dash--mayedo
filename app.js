@@ -7,8 +7,6 @@ import nodemailer from 'nodemailer';
 import Persons from './db/models/persons.js';
 import Rent from './db/models/rent.js';
 // import auth from './middlewares/auth.js'
-// import rentHomes from './api/rentHomes.js';
-// const Userroutes = require("./routes/user");
 import Homes from './db/models/home.js';
 
 const app = express();
