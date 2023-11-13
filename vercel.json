@@ -12,8 +12,8 @@
         "dest": "app.js"
       }
     ], 
-     "functions": {
-        "app.js": {
+    "functions": {
+        "*": {
           "maxDuration": 30
         }
       }
