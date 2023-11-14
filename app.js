@@ -9,6 +9,8 @@ import Rent from './db/models/rent.js';
 // import auth from './middlewares/auth.js'
 import Homes from './db/models/home.js';
 
+export const maxDuration=300;
+
 const app = express();
 const port = 4000;
 app.use(bodyParser.json());
