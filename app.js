@@ -8,11 +8,12 @@ import Persons from './db/models/persons.js';
 import Rent from './db/models/rent.js';
 // import auth from './middlewares/auth.js'
 import Homes from './db/models/home.js';
+import 'dotenv/config'
 
 export const maxDuration=300;
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
 app.use(bodyParser.json());
 app.use(cors())
 
