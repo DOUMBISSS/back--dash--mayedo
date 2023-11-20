@@ -27,7 +27,7 @@
     "functions": "^1.0.9",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^6.10.1",
-    "nodemailer": "^6.9.5",
+    "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1",
     "validator": "^13.11.0",
     "vercel": "^32.5.3"

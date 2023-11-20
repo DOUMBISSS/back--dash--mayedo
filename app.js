@@ -15,7 +15,7 @@ export const maxDuration=300;
 const app = express();
 const port = process.env.PORT;
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors({ credentials: true}))
 
 const database = new Database();
 
@@ -135,21 +135,24 @@ app.get('/users',function(req,res){
         .catch(err => {console.log(err);      
          })
     })
-app.post('/email',function(req,res){
 
-    const user=new User(req.body);
-    var transporter = nodemailer.createTransport({
-    host:'mac12.winihost.com',
+
+app.post('/email',function(req,res){
+  const user=new User(req.body);
+    let transporter = nodemailer.createTransport({
+      service:"email",
+    host:process.env.ADMIN_HOST,
     port: 465,
     auth: {
-    user: 'sci@mayedo.ci',
-    pass: 'mayedo@7788'
-  }
+            user: process.env.EMAIL_ID,
+            pass: process.env.EMAIL_PASS
+  },
+  secure:true
     });
     
-    var mailOptions = {
-    from: 'sci@mayedo.ci',
-    to: req.body.email,
+    let mailOptions = {
+    from: req.body.email,
+    to:  process.env.EMAIL_ID,
     subject:req.body.number ,
     text:req.body.content,
     };
